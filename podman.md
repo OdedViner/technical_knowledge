@@ -1,3 +1,4 @@
+```
 Build Image:
 podman build -t <image-tag-name> -f Docker_files/ABCD/Dockerfile .
                                     <path to docker file>    <ref-point>
@@ -13,20 +14,24 @@ podman login quay.io
 
 Pull image from Regisery:
 podman pull quay.io/project/imagename:stable
+```
 
 Example:
+```
 podman build -t imagename -f Docker_files/Dockerfile .
 podman image tag imagename quay.io/project/imagename:stable
 podman push ocsci-container quay.io/project/imagename:stable
-
+```
 
 Run Contianer:
+```
 podman run -v local/floder:container/folder:Z quay.io/project/imagename:stable command_in_container
                                           [disable_selinux]
-
+```
 Login to containeer:
+```
 podman run --entrypoint /bin/bash -v /home/odedviner/ClusterPath:/opt/cluster -it image:tag 
-
+```
 *******************************************************************************************************
 Dockerfile:
 Dockerfile is a text file that contains a set of instructions to build a Docker image. 

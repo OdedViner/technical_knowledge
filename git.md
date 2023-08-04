@@ -59,6 +59,7 @@ By default, "origin" is the name given to the remote repository you cloned from.
 ******************************************************************************************
 ******************************************************************************************
 Git Conflict steps:
+```
 1.Conflict message on git server.
 
 2.git fetch --all (from pgsql_debug branch)
@@ -76,6 +77,8 @@ output:CONFLICT (content): Merge conflict in setup.py
 7.git status (without changes)
 
 8.git push --force
+
+```
 ******************************************************************************************
 ******************************************************************************************
 Cherry-Pick:
@@ -84,7 +87,7 @@ Cherry-Pick:
      branch into a new branch named release-4.8-cherry-pick-pr-XYZ and then push that new branch to the 
      remote repository named origin. Here's a step-by-step breakdown of the commands:
 ]
-
+```
 Create and switch to a new branch named release-4.8-cherry-pick-pr-XYZ, which will be based on the upstream/release-4.8 branch:
 git checkout -b release-4.8-cherry-pick-pr-XYZ upstream/release-4.8
 
@@ -93,3 +96,4 @@ git cherry-pick COMMIT_ID
 
 Push the newly created branch release-4.8-cherry-pick-pr-XYZ to the remote repository named origin:
 git push origin release-4.8-cherry-pick-pr-XYZ
+```
