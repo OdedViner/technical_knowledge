@@ -1,18 +1,4 @@
-fields in /etc/passwd file:
-
-john:x:1000:1000:John Doe:/home/john:/bin/bash
-In this example:
-
-Username: "john"
-Password: "x" (the encrypted password is stored in /etc/shadow)
-UID: 1000
-GID: 1000
-User Information: "John Doe"
-Home Directory: "/home/john"
-Login Shell: "/bin/bash"
-************************************************************************************************************
-************************************************************************************************************
-Linux boot process:
+**Linux boot process:**
 
 1.BIOS/UEFI: When you turn on the computer, the Basic Input/Output System (BIOS) or 
 Unified Extensible Firmware Interface (UEFI) is activated. It performs a Power-On Self-Test (POST) 
@@ -53,9 +39,3 @@ the login manager (e.g., GDM, LightDM) is started, presenting the login screen f
 
 10.User Session (Graphical Mode): After successful login, 
 the desktop environment or window manager specified by the user is loaded, providing the graphical user interface.
-
-************************************************************************************************************
-************************************************************************************************************
-Run a command that shows all lines except any lines starting with char # in a file? 
-$ cat test | grep -v ^#
-aaa
