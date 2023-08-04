@@ -7,7 +7,10 @@ git status: Shows the current status of your working directory.
 git add <file>: Adds changes from your working directory to the staging area.
 
 ******************************************************************************************
-git commit -m "commit message" -s: Commits the changes in the staging area to the repository.
+```
+git commit -m "commit message" -s 
+```
+Commits the changes in the staging area to the repository.
 The -m flag is used to specify the commit message
 The -s flag adds a "Signed-off-by" line to the commit message, indicating that the author is acknowledging 
 certain legal and licensing requirements. The "Signed-off-by" line typically includes the author's name and email address.
@@ -44,11 +47,13 @@ git rebase main
 git merge <branch>: Merges the specified branch into the current branch. 
 It combines the changes from the specified branch into your current branch.
 
-Example:
+**Example**:
+```
 Switch to the target branch: 
 git checkout master
-Merge the changes: Once you are on the target branch (master in this case):
+# Merge the changes: Once you are on the target branch (master in this case):
 git merge feature-branch
+```
 ******************************************************************************************
 git log: Shows the commit history, displaying the commit hashes, authors, dates, and commit messages.
 
