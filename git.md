@@ -107,12 +107,14 @@ remote repository named origin. Here's a step-by-step breakdown of the commands:
 ```
 
 ```
-Create and switch to a new branch named release-4.8-cherry-pick-pr-XYZ, which will be based on the upstream/release-4.8 branch:
-git checkout -b release-4.8-cherry-pick-pr-XYZ upstream/release-4.8
+Create and switch to a new branch named release-4.8-cherry-pick-pr-XYZ, 
+which will be based on the upstream/release-4.8 branch:
+#git checkout -b release-4.8-cherry-pick-pr-XYZ upstream/release-4.8
 
-Cherry-pick the desired commit (COMMIT_ID) from the upstream/release-4.8 branch onto the release-4.8-cherry-pick-pr-XYZ branch:
-git cherry-pick COMMIT_ID
+Cherry-pick the desired commit (COMMIT_ID) from the upstream/release-4.8 
+branch onto the release-4.8-cherry-pick-pr-XYZ branch:
+#git cherry-pick COMMIT_ID
 
 Push the newly created branch release-4.8-cherry-pick-pr-XYZ to the remote repository named origin:
-git push origin release-4.8-cherry-pick-pr-XYZ
+#git push origin release-4.8-cherry-pick-pr-XYZ
 ```
