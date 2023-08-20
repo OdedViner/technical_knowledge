@@ -35,3 +35,9 @@ Mocking in software testing is a technique used to simulate or replace certain c
 with "mock objects" or "mocks." The primary purpose of mocking is to isolate the unit or component being tested from 
 its external dependencies or collaborators, allowing for controlled and repeatable testing of specific functionality. 
 Mocking is commonly used in unit testing and integration testing. 
+
+**Stress testing:**  
+Stress testing is a type of performance testing that evaluates how a software application or system performs under 
+extreme conditions or loads. The primary goal of stress testing is to identify the system's breaking point, 
+assess its stability, and determine whether it can handle the maximum expected load or beyond. Stress testing helps 
+uncover performance bottlenecks, resource limitations, and potential failures that may occur under heavy or adverse conditions.
