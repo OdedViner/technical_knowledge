@@ -1,4 +1,4 @@
-**ETCD in Kubernetes:**
+**ETCD in Kubernetes:**  
 etcd is a distributed key-value store that is often used as the primary data store for Kubernetes clusters. 
 
 
