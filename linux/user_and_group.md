@@ -1,4 +1,4 @@
-<span style="font-size: larger;">Users:</span>  
+#Users:  
 
 **User Account:**   
 A user account represents an individual or a system entity with a unique username and user ID (UID). 
