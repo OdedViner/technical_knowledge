@@ -2,12 +2,12 @@
 etcd is a distributed key-value store that is often used as the primary data store for Kubernetes clusters. 
 
 
-**Kube-API Server:**
+**Kube-API Server:**  
 It serves as the front-end for the Kubernetes control plane and is responsible for exposing the Kubernetes API, 
 which allows users, administrators, and other components to interact with the cluster.
 
 
-**Kube Controller Manager:**
+**Kube Controller Manager:**  
 It is responsible for managing various controllers that regulate the state of the cluster, ensuring that the desired state matches the current state. 
 
 
