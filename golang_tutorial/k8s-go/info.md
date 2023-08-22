@@ -19,15 +19,17 @@ $ kubectl create -f k8s-go.yaml
 ```
 $ kubectl create role poddepl --resource pod,deployments --verb list
 ```
-Create a Role (poddepl):
+**Create a Role (poddepl):**  
 
-$ kubectl create role poddepl --resource pods,deployments --verb list
-kubectl create role poddepl: This part of the command instructs Kubernetes to create a Role resource named poddepl.
+kubectl create role poddepl: 
+This part of the command instructs Kubernetes to create a Role resource named poddepl.
 
---resource pods,deployments: This specifies the resources to which the Role will grant permissions. 
+--resource pods,deployments: 
+This specifies the resources to which the Role will grant permissions. 
 In this case, it grants permissions to pods and deployments.
 
---verb list: This specifies the actions that are allowed on the specified resources. 
+--verb list: 
+This specifies the actions that are allowed on the specified resources. 
 The list verb allows the service account associated with this Role to list (view) pods and deployments.
 
 
@@ -35,11 +37,12 @@ The list verb allows the service account associated with this Role to list (view
 $ kubectl create rolebinding poddepl --role poddepl --serviceaccount default:default
 ```
 
-Create a RoleBinding (poddepl):
-kubectl create rolebinding poddepl: 
+**Create a RoleBinding (poddepl):** 
+kubectl create rolebinding poddepl:   
 This part of the command instructs Kubernetes to create a RoleBinding resource named poddepl.
 
---role poddepl: This specifies the Role (created in the previous command) to bind to this RoleBinding. 
+--role poddepl: 
+This specifies the Role (created in the previous command) to bind to this RoleBinding. 
 In other words, it associates the permissions defined in the poddepl Role with this RoleBinding.
 
 --serviceaccount default:default: 
