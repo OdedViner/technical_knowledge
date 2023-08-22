@@ -12,7 +12,7 @@ docker push quay.io/oviner/k8s-go:0.1.0
 
 
 **k8s cmd:**    
-$ minikube start --disk-size=10g --extra-disks=1 --driver kvm2
+$ minikube start --disk-size=10g --extra-disks=1 --driver kvm2  
 $ kubectl create deployment k8s-go --image quay.io/oviner/k8s-go:0.1.0 --dry-run=client -o yaml > k8s-go.yaml  
 $ kubectl create -f k8s-go.yaml  
 
