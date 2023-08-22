@@ -19,7 +19,7 @@ $ kubectl create -f k8s-go.yaml
 ```
 $ kubectl create role poddepl --resource pod,deployments --verb list
 ```
-**Create a Role (poddepl):**  
+**Create a Role (poddepl):**    
 
 kubectl create role poddepl: 
 This part of the command instructs Kubernetes to create a Role resource named poddepl.
@@ -37,7 +37,8 @@ The list verb allows the service account associated with this Role to list (view
 $ kubectl create rolebinding poddepl --role poddepl --serviceaccount default:default
 ```
 
-**Create a RoleBinding (poddepl):** 
+**Create a RoleBinding (poddepl):**   
+
 kubectl create rolebinding poddepl:   
 This part of the command instructs Kubernetes to create a RoleBinding resource named poddepl.
 
