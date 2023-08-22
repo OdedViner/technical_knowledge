@@ -2,51 +2,21 @@
 go mod init main.go   
 go get k8s.io/client-go/kubernetes  
 go get k8s.io/client-go/tools/clientcmd 
-k8s.io/client-go/rest  
+go get k8s.io/client-go/rest  
 go build main.go
 
 **Docker:**  
-docker build -t k8s:0.1.0 .
-docker tag k8s:0.1.0 quay.io/oviner/k8s-go:0.1.0
-docker push quay.io/oviner/k8s-go:0.1.0 
-docker run --entrypoint /bin/bash -it k8s:0.1.0
-```
-root@d9779bb2dbb6:/# ls -lh main 
--rwxrwxr-x. 1 root root 44M Aug 22 14:44 main
-oviner:k8s-go$ ls -lh main
--rwxrwxr-x. 1 oviner oviner 44M Aug 22 17:44 main
-```
+docker build -t k8s:0.1.0 .  
+docker tag k8s:0.1.0 quay.io/oviner/k8s-go:0.1.0  
+docker push quay.io/oviner/k8s-go:0.1.0   
 
 
 **k8s cmd:**    
 $ minikube start --disk-size=10g --extra-disks=1 --driver kvm2
-kubectl create deployment k8s-go --image quay.io/oviner/k8s-go:0.1.0 --dry-run=client -o yaml > k8s-go.yaml
-kubectl create -f k8s-go.yaml
-```
-$ kubectl logs k8s-go-74db64c7d-xdscv 
-error stat /home/oviner/ClusterPath/auth/kubeconfig: no such file or directory building config from flags
-panic: runtime error: invalid memory address or nil pointer dereference
-[signal SIGSEGV: segmentation violation code=0x1 addr=0x0 pc=0x12b5b9d]
-
-goroutine 1 [running]:
-k8s.io/client-go/kubernetes.NewForConfig(0x17a5ba0?)
-        /home/oviner/go/pkg/mod/k8s.io/client-go@v0.28.0/kubernetes/clientset.go:461 +0x1d
-main.main()
-        /home/oviner/CI_PROJECT_ODED/technical_knowledge/golang_tutorial/k8s-go/main.go:20 +0xd9
-```
-kubectl delete -f k8s-go.yaml
-
+$ kubectl create deployment k8s-go --image quay.io/oviner/k8s-go:0.1.0 --dry-run=client -o yaml > k8s-go.yaml  
+$ kubectl create -f k8s-go.yaml  
 
 ```
-$ kubectl  logs k8s-go-75df89655b-x55hf 
-error stat /home/oviner/ClusterPath/auth/kubeconfig: no such file or directory building config from flags
-error pods is forbidden: User "system:serviceaccount:default:default" cannot list resource "pods" in API group "" in the namespace "openshift-storage", while listing all the pods from default namespace
-pod in openshift-storage ns:
-listing deployments deployments.apps is forbidden: User "system:serviceaccount:default:default" cannot list resource "deployments" in API group "apps" in the namespace "openshift-storage"
-deployment in openshift-storage ns::
-
-```
-
 $ kubectl create role poddepl --resource pod,deployments --verb list
 ```
 Create a Role (poddepl):
@@ -59,10 +29,12 @@ In this case, it grants permissions to pods and deployments.
 
 --verb list: This specifies the actions that are allowed on the specified resources. 
 The list verb allows the service account associated with this Role to list (view) pods and deployments.
-```
+
 
 ```
 $ kubectl create rolebinding poddepl --role poddepl --serviceaccount default:default
+```
+
 Create a RoleBinding (poddepl):
 kubectl create rolebinding poddepl: 
 This part of the command instructs Kubernetes to create a RoleBinding resource named poddepl.
@@ -73,12 +45,12 @@ In other words, it associates the permissions defined in the poddepl Role with t
 --serviceaccount default:default: 
 This specifies the service account to which the RoleBinding is bound. 
 In this case, it binds the Role poddepl to the default service account in the default namespace.
-```
 
+```
 $ kubectl logs k8s-go-6767b78c75-rd64p
 error stat /home/oviner/ClusterPath/auth/kubeconfig: no such file or directory building config from flags
 pod in default ns:
 k8s-go-6767b78c75-rd64p
 deployment in default ns::
 k8s-go
-
+```
