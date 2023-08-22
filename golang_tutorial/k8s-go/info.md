@@ -1,7 +1,8 @@
 **go buid:**  
-go mod init main.go 
-go get k8s.io/client-go/kubernetes
-go get k8s.io/client-go/tools/clientcmd
+go mod init main.go   
+go get k8s.io/client-go/kubernetes  
+go get k8s.io/client-go/tools/clientcmd 
+k8s.io/client-go/rest  
 go build main.go
 
 **Docker:**  
