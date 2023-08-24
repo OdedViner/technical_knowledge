@@ -63,3 +63,13 @@ as well as various virtualization platforms, container orchestration systems, an
 **Community and Commercial Support:**  
 Ceph is an open-source project with an active community of developers and users. 
 There are also commercial distributions and support options available for enterprises.
+
+***********************************************************************************************************
+
+**Erasure storage:**   
+Uses mathematical techniques to break data into fragments and add redundancy with less storage overhead. 
+It's efficient in terms of storage space.
+
+**Replicated storage:**   
+Involves creating exact copies of data on multiple storage devices or nodes, 
+ensuring high data availability but with higher storage overhead.
