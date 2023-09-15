@@ -18,7 +18,7 @@ spec:
         app: k8s-go
     spec:
       containers:
-      - image: quay.io/oviner/k8s-go:0.1.3
+      - image: quay.io/oviner/k8s-go:0.1.0
         name: k8s-go
         resources: {}
 status: {}
