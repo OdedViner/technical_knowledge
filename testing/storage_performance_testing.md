@@ -138,3 +138,61 @@ Peak CPU Utilization: The peak CPU utilization observed during the test was 80%.
 These CPU utilization results provide insights into the CPU's workload and efficiency in handling storage-related tasks under the specified workload. While an average CPU utilization of 50% indicates that the CPU is operating at a moderate load, a peak CPU utilization of 80% suggests that the CPU may have experienced higher workloads at certain times during the test.
 
 Analyzing CPU utilization results alongside other performance metrics such as latency, throughput, and IOPS can help identify any potential performance bottlenecks or issues in the storage system. Additionally, comparing CPU utilization across different test scenarios or workloads can provide valuable insights into the system's scalability and resource utilization characteristics.
+
+
+************************************************************************************
+FIO:
+
+FIO (Flexible I/O Tester) is a powerful benchmarking tool used to evaluate the performance of storage devices and systems under various workloads. FIO allows users to specify a wide range of parameters to customize the test scenarios according to their requirements. Here are some of the main parameters used in FIO:
+
+filename: Specifies the name of the file or device to be used for testing. This parameter is typically used to specify the path to the file or device on which the I/O operations will be performed.
+
+size: Specifies the size of the file or device to be used for testing. This parameter allows you to specify the total size of the test data, which can be useful for simulating different workload sizes.
+
+bs (Block Size): Specifies the size of the I/O request blocks in bytes. This parameter determines the size of the data chunks that FIO will read from or write to the storage device during the test. Choosing an appropriate block size is important for accurately simulating real-world workloads and optimizing performance.
+
+rw (Read/Write): Specifies the type of I/O operations to be performed during the test. Options include read, write, randread, randwrite, randrw, etc., which represent different combinations of read and write operations, as well as sequential and random access patterns.
+
+iodepth: Specifies the depth of the I/O queue. This parameter controls the number of outstanding I/O requests that FIO will issue to the storage device simultaneously. Increasing the iodepth can improve performance by allowing more I/O requests to be processed concurrently, but it can also increase resource usage.
+
+numjobs: Specifies the number of parallel jobs or threads to be used for testing. This parameter allows you to simulate concurrent access to the storage device by multiple clients or applications. Increasing the numjobs can help evaluate the system's performance under higher levels of concurrency.
+
+runtime: Specifies the duration of the test in seconds. This parameter allows you to control the duration of the test and determine how long FIO will run the specified workload.
+
+time_based: Specifies that the test duration should be based on time rather than on the number of I/O operations. When enabled, FIO will run the test for the duration specified by the runtime parameter.
+
+group_reporting: Specifies that FIO should report aggregate statistics for all jobs rather than individual statistics for each job. This parameter can be useful for simplifying the test output and focusing on overall performance metrics.
+
+```
+Test file: /dev/sdb (a block device)
+Test size: 1 GB
+Block size: 4 KB
+Workload: Random read and write (50% read, 50% write)
+I/O depth: 16
+Number of jobs: 4
+Test duration: 60 seconds
+
+fio --filename=/dev/sdb \
+    --size=1G \
+    --bs=4k \
+    --rw=randrw \
+    --rwmixread=50 \
+    --iodepth=16 \
+    --numjobs=4 \
+    --runtime=60 \
+    --time_based \
+    --group_reporting
+```
+
+Explanation of parameters used:
+
+--filename=/dev/sdb: Specifies the block device /dev/sdb as the target for testing.
+--size=1G: Sets the size of the test file to 1 GB.
+--bs=4k: Sets the block size to 4 KB.
+--rw=randrw: Specifies random read and write operations.
+--rwmixread=50: Sets the read/write mix to 50% read and 50% write.
+--iodepth=16: Sets the I/O depth to 16, meaning FIO will issue up to 16 I/O requests in parallel.
+--numjobs=4: Specifies 4 parallel jobs or threads.
+--runtime=60: Sets the test duration to 60 seconds.
+--time_based: Specifies that the test duration should be based on time.
+--group_reporting: Specifies that FIO should report aggregate statistics for all jobs.
