@@ -1,0 +1,6 @@
+# tasks file for file_copy
+---
+- name: Copy file from /home/oviner/test/test.txt to /home/oviner/data1
+  copy:
+    src: /home/oviner/test/test.txt
+    dest: /home/oviner/data1/test.txt
