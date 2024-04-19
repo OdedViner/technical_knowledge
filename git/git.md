@@ -146,3 +146,5 @@ $ git diff c2426c5 3bb7599
 
 Comparing Between Local and Remote Master Branches:
 git diff master origin/master
+
+gg
