@@ -1,2 +1,0 @@
-# roles/web_server/defaults/main.yml
-web_server_port: 8888
