@@ -1,6 +1,6 @@
 ---
 - name: Copy File Playbook
-  hosts: all
+  hosts: servers
   become: true # Whether to execute tasks with elevated privileges (like sudo).
   roles:
     - file_copy
