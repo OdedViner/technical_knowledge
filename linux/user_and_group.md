@@ -1,7 +1,7 @@
 ## Users:  
 
-**User Account:**   
-A user account represents an individual or a system entity with a unique username and user ID (UID). 
+**User Account:**     
+A user account represents an individual or a system entity with a unique username and user ID (UID).   
 User accounts are used to log in to the system and perform various tasks.
 
 **Username:**   
